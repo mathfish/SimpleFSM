@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "SimpleFSM"
+version = "0.1.0"
+description = "A simple finite state machine framework"
+authors = ["Jonathan Thompson"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+networkx = "^3.3"
+matplotlib = "^3.7.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
