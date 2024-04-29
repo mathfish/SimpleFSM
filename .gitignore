@@ -1,3 +1,6 @@
+# pickle and text files from/for processing
+data/*.pkl 
+data/*.txt
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

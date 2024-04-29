@@ -5,7 +5,8 @@ import sys
 from types import MappingProxyType
 import warnings
 import networkx as nx
-from typing import Dict, Generator
+import matplotlib.pyplot as plt
+from typing import Dict, Generator, Tuple
 from SimpleFSM._meta import MetaFSM
 from SimpleFSM.state import State 
   
@@ -43,7 +44,7 @@ class FSM(metaclass=MetaFSM):
     self.__context_data.update(user_context_data)
 
   def _setup_checkpoint(self, checkpoint_file_path):
-    def_path = "/content/drive/My Drive/Learning Topics/Notebooks/Sandbox/Data"
+    def_path = "./data"
     chk_pt_name = chk_pt_name = self.__class__.__name__ + "_checkpoint.pkl"
 
     if checkpoint_file_path is not None:
@@ -122,13 +123,16 @@ class FSM(metaclass=MetaFSM):
     self._events_processed += 1
     
 
-  def plot_graph(self):
+  def plot_graph(self, fig_size:Tuple=(12, 10)):
+    fig, ax = plt.subplots(figsize=fig_size)
     nx.draw(self.FSM_graph, 
             with_labels=True, 
             node_size=1000, 
             node_color="skyblue", 
             font_size=12, 
-            font_weight="bold")
+            font_weight="bold",
+            ax=ax)
+    plt.show()
 
 
   def _create_checkpoint(self):
