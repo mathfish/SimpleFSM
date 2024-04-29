@@ -143,7 +143,7 @@ class FSM(metaclass=MetaFSM):
         self._process_event(event)
 
         # save checkpoint if every nth checkpoint saving defined 
-        if self.checkpoint_every is not None\
+        if self.checkpoint_every is not None and self.checkpoint_every > 0\
           and self._events_processed % self.checkpoint_every == 0:
             self._create_checkpoint()
     except KeyboardInterrupt:

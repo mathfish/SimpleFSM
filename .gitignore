@@ -1,6 +1,10 @@
 # pickle and text files from/for processing
 data/*.pkl 
 data/*.txt
+
+# Ignore Mac Sytem File
+.DS_Store
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
